@@ -1,4 +1,4 @@
-# Develop Envicronment On Mac OSX
+# Develop Environment On Mac OSX
 
 ## lpc21isp 
 
@@ -14,7 +14,7 @@ sudo brew install lpc21isp
 #!/bin/sh
 
 GCC=gcc-arm-none-eabi-4_9-2015q2-20150609-mac
-wget https://launchpad.net/gcc-arm-embedded/4.9/4.9-2015-q2-update/+download/$GCC.tar.bz2
+curl https://launchpad.net/gcc-arm-embedded/4.9/4.9-2015-q2-update/+download/$GCC.tar.bz2 -o $GCC.tar.bz2
 tar xvfz $GCC.tar.bz2
 
 export PATH=$PATH:`pwd`/$GCC/bin
