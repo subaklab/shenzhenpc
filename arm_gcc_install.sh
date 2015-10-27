@@ -1,9 +1,10 @@
+
 if [[ "$(uname)" == "Darwin" ]]; then
 OS="mac"
 elif [[ "$(expr substr $(uname -s) 1 5)" == "Linux" ]]; then
 OS="linux"
 elif [[ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]]; then
-    # Do something under Windows NT platform
+OS="windows"
 fi
 
 GCC_VERSION="gcc-arm-none-eabi-4_9-2015q2"
