@@ -25,3 +25,6 @@ rm $GCC.tar.bz2
 export PATH="`pwd`/$GCC_VERSION/bin:$PATH"
 arm-none-eabi-gcc --version | head -1
 ````
+
+## UnitTest
+ * CppUTest 설치하기 - http://cpputest.github.io/
