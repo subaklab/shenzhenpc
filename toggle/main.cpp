@@ -1,3 +1,19 @@
+typedef unsigned int volatile * vp;
+int main() {
+   /* PIO0_2 is used by SWD, so disable it */
+   *(vp) 0x4000C1C0 = 0xFFFFFFBFUL; /* PINENABLE0 register */
+ /* Set GPIO Direction */
+   *(vp) 0xA0002000 |= 1 << 2;  /* DIR0, set PIO0_2 to output */
+ for(;;) {
+    /* Toggle the LED */
+     *(vp) 0xA0002300 |= 1 << 2;  /* NOT0 register */
+     //volatile long wait = 240000;
+     volatile long wait = 480000;
+     while (wait > 0) --wait;   /* WAIT */
+   }
+ }
+
+/*
 // Toggle I/O pins as fast as possible for doing timing measurements.
 // See http://jeelabs.org/2014/11/26/getting-started-final-episode/
 
@@ -41,7 +57,7 @@ int main () {
     while (true) {
         LPC_GPIO_PORT->NOT0 = 1<<2;         // toggle GPIO 2 max speed (pin 4)
         //while(count < 1000000) {
-        while(count < 500000) {
+        while(count < 5000000) {
           count++;
         }
         count = 0;
@@ -54,3 +70,4 @@ extern "C" void SysTick_Handler () {
     LPC_GPIO_PORT->B0[3] = 1;               // set GPIO 3 high again
     LPC_GPIO_PORT->B0[3] = 0;               // set GPIO 3 low again
 }
+*/

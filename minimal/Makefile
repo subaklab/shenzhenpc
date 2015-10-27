@@ -21,7 +21,9 @@ vpath %.cpp ../minimal
 
 # default target
 upload: firmware.bin
-	lpc21isp -control -donotstart -bin $< $(TTY) 115200 0
+	#lpc21isp -control -donotstart -bin $< $(TTY) 115200 0
+	lpc21isp -control -bin $< $(TTY) 115200 0
+	(lpc21isp -try1 -control -bin $< $(TTY) 115200 0) &> /dev/null
 
 firmware.elf: main.o gcc_startup_lpc8xx.o
 	$(CC) -o $@ $(CFLAGS) $(LDFLAGS) $^
