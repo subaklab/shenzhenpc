@@ -1,5 +1,8 @@
 gcc-arm-*
 lpc21isp-*
+LPC21ISP_*
 *.elf
 *.bin
+*.exe
 *.o
+cpputest*
