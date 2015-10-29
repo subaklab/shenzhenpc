@@ -1,5 +1,6 @@
 gcc-arm-*
 lpc21isp-*
+LPC21ISP_*
 *.elf
 *.bin
 *.o

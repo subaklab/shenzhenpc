@@ -7,8 +7,8 @@ int main() {
  for(;;) {
     /* Toggle the LED */
      *(vp) 0xA0002300 |= 1 << 2;  /* NOT0 register */
-     volatile long wait = 120000;
-     //volatile long wait = 480000;
+     //volatile long wait = 120000;
+     volatile long wait = 480000;
      while (wait > 0) --wait;   /* WAIT */
    }
  }

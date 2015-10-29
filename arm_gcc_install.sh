@@ -1,4 +1,3 @@
-
 if [[ "$(uname)" == "Darwin" ]]; then
 OS="mac"
 elif [[ "$(expr substr $(uname -s) 1 5)" == "Linux" ]]; then
@@ -11,7 +10,7 @@ GCC_VERSION="gcc-arm-none-eabi-4_9-2015q2"
 GCC_OS="-20150609-$OS"
 GCC="$GCC_VERSION$GCC_OS"
 
-if [ "$OS" = "win32"]; then
+if [[ "$OS" = "win32" ]]; then
     curl -L https://launchpad.net/gcc-arm-embedded/4.9/4.9-2015-q2-update/+download/$GCC.zip > $GCC.zip
     unzip $GCC.zip -d $GCC_VERSION
     rm $GCC.zip
