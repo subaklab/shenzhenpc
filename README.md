@@ -6,7 +6,7 @@
 참고:
 
  - CppUTest 설치하기 - http://cpputest.github.io/
- - ![Shenzhen Board를 이용한 테스트 주도 개발](http://subak-io.gitbooks.io/shenzhenboard-unittest/content/)
+ - [Shenzhen Board를 이용한 테스트 주도 개발](http://subak-io.gitbooks.io/shenzhenboard-unittest/content/)
 
 # ARM GCC Install (target board)
 
