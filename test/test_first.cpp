@@ -1,4 +1,4 @@
-#include <CppUTest/CommandLineTestRunner.h>
+#include <CppUTest/CommandLineTestRunner.h>
 #include <stdint.h>
 
 int main(int ac, char** av){
@@ -20,9 +20,4 @@ TEST_GROUP(FirstTestGroup)
 TEST(FirstTestGroup, FirstTest)
 {
   CHECK_TRUE(1);
-}
-
-TEST(FirstTestGroup, SecoundTest)
-{
-  CHECK_TRUE(0);
 }

@@ -6,3 +6,6 @@ LPC21ISP_*
 *.exe
 *.o
 cpputest*
+tmp
+HomeAutomation
+!tmp/step3/HomeAutomation

@@ -2,8 +2,8 @@
 
 # TODO: Change FTDI232 Portname. default Linux USB device name for upload
 #TTY ?= /dev/ttyUSB0
-#TTY ?= /dev/tty.usbserial-A50285BI
-TTY ?= COM5
+TTY ?= /dev/tty.usbserial-A50285BI
+#TTY ?= COM5
 
 # use the arm cross compiler, not std gcc
 TRGT = arm-none-eabi-
@@ -13,6 +13,7 @@ CP = $(TRGT)objcopy
 
 # compiler and linker settings
 CFLAGS = -mcpu=cortex-m0plus -mthumb -I../minimal -Os -ggdb
+#CFLAGS = -mcpu=cortex-m0plus -mthumb -I../minimal -O0 -ggdb
 CXXFLAGS = $(CFLAGS) -fno-rtti -fno-exceptions
 LDFLAGS = -Wl,--script=../minimal/LPC810.ld -nostartfiles
 
