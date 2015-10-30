@@ -1,9 +1,0 @@
-bin/
-obj/
-*.depend
-*.layout
-*.*~
-*.o
-lpc21isp
-.*/
-.DS_Store
