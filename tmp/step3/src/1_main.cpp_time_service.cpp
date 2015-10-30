@@ -3,15 +3,26 @@
  * - 30MHz clock
  * - 1 wait state for flash
  * - PIO0_2 is a LED outupt
- * - SysTick 2 times a second
+ * - SysTick 10 times a second
+ *
+ * Operation:
+ * - Toggle the state of the LED on PIO0_2 on every SysTick (heartbeat)
  *
 */
 
 #include "LPC8xx.h"
+#include "TimeService.h"
+
+extern int theMinute;
+extern int theDay;
+
+volatile long int ticks = 0;
 
 extern "C" void SysTick_Handler(void) {
      // Toggle LED on PIO0_2
-     LPC_GPIO_PORT->NOT0 = 4;
+     //LPC_GPIO_PORT->NOT0 = 4;
+     ticks++;
+     theMinute = ticks / 1000 / 60;
  }
  
 int main(void) {
@@ -39,8 +50,18 @@ int main(void) {
     //SysTick_Config(30000000/10);
 
     // SysTick 2 time a second
-    SysTick_Config(30000000/2);
+    //SysTick_Config(30000000/2);
+
+    // SysTick 1000 time a second
+    SysTick_Config(30000000/1000);
  
-    while (1);
+    Time time;
+
+    while (1) 
+    {
+      TimeService_GetTime(&time);
+      if (time.minuteOfDay >= 1) 
+        LPC_GPIO_PORT->NOT0 = 4;
+    }
 }
 

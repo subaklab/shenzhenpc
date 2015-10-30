@@ -3,7 +3,12 @@
  * - 30MHz clock
  * - 1 wait state for flash
  * - PIO0_2 is a LED outupt
- * - SysTick 2 times a second
+ * - SysTick 10 times a second
+ *
+ * Operation:
+ :bc
+
+
  *
 */
 
