@@ -7,11 +7,11 @@ OBJS = test_first.o test_LightScheduler.o # TODO: ADD TEST OBJ
 OPTIONS = 
 CC = g++
 
-CPPFLAGS += -I../HomeAutomation
-vpath %.c ../HomeAutomation
-vpath %.cpp ../HomeAutomation
-OBJS += LightScheduler.o LightController.o TimeService.o # TODO: ADD Production OBJ
-OBJS += FakeTimeService.o LightControllerSpy.o # TODO: ADD Test Double OBJ
+#CPPFLAGS += -I../HomeAutomation
+#vpath %.c ../HomeAutomation
+#vpath %.cpp ../HomeAutomation
+#OBJS += LightScheduler.o LightController.o TimeService.o # TODO: ADD Production OBJ
+#OBJS += FakeTimeService.o LightControllerSpy.o # TODO: ADD Test Double OBJ
 
 .SUFFIXES: .cpp
 
@@ -30,11 +30,11 @@ clean:
 test_first.o: test_first.cpp
 
 # TODO: ADD TEST CPP SOURCE
-test_LightScheduler.o: test_LightScheduler.cpp
-LightScheduler.o: LightScheduler.cpp
-LightController.o: LightController.cpp
-TimeService.o: TimeService.cpp
+#test_LightScheduler.o: test_LightScheduler.cpp
+#LightScheduler.o: LightScheduler.cpp
+#LightController.o: LightController.cpp
+#TimeService.o: TimeService.cpp
 
-FakeTimeService.o: FakeTimeService.cpp
-LightControllerSpy.o: LightControllerSpy.cpp
+#FakeTimeService.o: FakeTimeService.cpp
+#LightControllerSpy.o: LightControllerSpy.cpp
 
